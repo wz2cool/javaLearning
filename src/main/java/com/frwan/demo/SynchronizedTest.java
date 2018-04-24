@@ -46,6 +46,22 @@ public class SynchronizedTest {
         }).start();
     }
 
+
+    public static void testBlockMethodSync() {
+        final SynchronizedTest test = new SynchronizedTest();
+        new Thread(new Runnable() {
+            public void run() {
+                test.blockSyncMethod1();
+            }
+        }).start();
+
+        new Thread(new Runnable() {
+            public void run() {
+                test.blockSyncMethod2();
+            }
+        }).start();
+    }
+
     /// region help method.
     private synchronized void method1() {
         System.out.println("Method 1 start");
@@ -90,5 +106,37 @@ public class SynchronizedTest {
         }
         System.out.println("Static Method 2 end");
     }
+
+    private final Object blockLocker = new Object();
+
+    private void blockSyncMethod1() {
+        synchronized (blockLocker) {
+            System.out.println("blockSync method1 start");
+            try {
+
+                System.out.println("blockSync method1 execute");
+                Thread.sleep(3000);
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("blockSync method1 end");
+        }
+    }
+
+    private void blockSyncMethod2() {
+        synchronized (blockLocker) {
+            System.out.println("blockSync method2 start");
+            try {
+                System.out.println("blockSync method2 execute");
+                Thread.sleep(3000);
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("blockSync method2 end");
+        }
+    }
+
     /// endregion
 }
