@@ -1,4 +1,4 @@
-package com.frwan.demo;
+package com.frwan.concurrent;
 
 public class SynchronizedTest {
 

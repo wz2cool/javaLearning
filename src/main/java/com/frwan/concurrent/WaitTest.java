@@ -1,4 +1,4 @@
-package com.frwan.demo;
+package com.frwan.concurrent;
 
 public class WaitTest {
 
@@ -12,7 +12,8 @@ public class WaitTest {
     }
 
     /**
-     * Wait 必须在被 synchronized修饰， 否则无法拿到monitor
+     * Wait 必须在被 synchronized修饰， 否则无法拿到monitor,
+     * 所以Wait 主要是使用在多线程中
      */
     private synchronized void testMethod() {
         System.out.println("Start-----");
