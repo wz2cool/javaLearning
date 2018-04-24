@@ -5,6 +5,9 @@ import java.util.Iterator;
 import java.util.List;
 
 public class JoinTest {
+    /**
+     *  这里我们可以通过并发，最终在join 以后父线程等待所有子线程完成，有点像C# Task.waitAll
+     */
     public static void testJoin() {
         final JoinTest joinTest = new JoinTest();
 
