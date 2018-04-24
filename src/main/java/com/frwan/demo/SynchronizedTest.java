@@ -47,6 +47,11 @@ public class SynchronizedTest {
     }
 
 
+    /**
+     * [代码块同步]
+     * 我们只是锁了blockLocker 这个内部对象，这个应该比锁整个对象更加灵活,
+     * 但是noBlockMethod 并没有锁上blockLocker所以可以并发执行不用等待
+     */
     public static void testBlockMethodSync() {
         final SynchronizedTest test = new SynchronizedTest();
         new Thread(new Runnable() {
@@ -58,6 +63,12 @@ public class SynchronizedTest {
         new Thread(new Runnable() {
             public void run() {
                 test.blockSyncMethod2();
+            }
+        }).start();
+
+        new Thread(new Runnable() {
+            public void run() {
+                test.noBlockSyncMethod();
             }
         }).start();
     }
@@ -138,5 +149,16 @@ public class SynchronizedTest {
         }
     }
 
+    private void noBlockSyncMethod() {
+        System.out.println("noBlockSyncMethod start");
+        try {
+            System.out.println("noBlockSyncMethod execute");
+            Thread.sleep(3000);
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("noBlockSyncMethod end");
+    }
     /// endregion
 }
