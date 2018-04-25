@@ -10,7 +10,7 @@ package com.frwan.concurrent;
  * <p>
  * volatile只能修饰变量，而synchronized可以修改变量，方法以及代码块
  * volatile在多线程中不会存在阻塞问题，synchronized会存在阻塞问题
- * volatile能保证数据的可见性，但不能完全保证数据的原子性，synchronized即保证了数据的可见性也保证了原子性
+ * volatile能保证数据的可见性，但不能完全保证数据的原子性（可用atomInteger），synchronized即保证了数据的可见性也保证了原子性
  * volatile解决的是变量在多个线程之间的可见性，而sychroized解决的是多个线程之间访问资源的同步性
  */
 public class VolatileTest extends Thread {
