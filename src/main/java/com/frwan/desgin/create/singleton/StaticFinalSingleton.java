@@ -1,5 +1,6 @@
-package com.frwan.desgin.singleton;
+package com.frwan.desgin.create.singleton;
 
+// 饿汉式构造
 public class StaticFinalSingleton {
     //类加载时就初始化
     private static final StaticFinalSingleton instance = new StaticFinalSingleton();

@@ -1,5 +1,6 @@
-package com.frwan.desgin.singleton;
+package com.frwan.desgin.create.singleton;
 
+// 懒汉式构造
 public class LazySingleton {
     private volatile static LazySingleton instance;
 
