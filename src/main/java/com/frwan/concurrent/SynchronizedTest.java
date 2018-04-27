@@ -2,6 +2,17 @@ package com.frwan.concurrent;
 
 public class SynchronizedTest {
 
+    public static void main(String[] args) throws Exception {
+        System.out.println("============= testNormalMethodSync =============");
+        testNormalMethodSync();
+        Thread.sleep(10000);
+        System.out.println("============= testStaticMethodSync =============");
+        testStaticMethodSync();
+        Thread.sleep(10000);
+        System.out.println("============= testBlockMethodSync =============");
+        testBlockMethodSync();
+    }
+
     /**
      * [对普通方法同步]
      * 保证对于 test 这个对象上的调用是同步的，

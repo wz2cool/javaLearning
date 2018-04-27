@@ -12,7 +12,7 @@ public class NotifyTest {
      *
      * @throws InterruptedException
      */
-    public static void testNotify() throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
         final NotifyTest test = new NotifyTest();
 
         for (int i = 0; i < 5; i++) {
@@ -28,6 +28,7 @@ public class NotifyTest {
             test.notify();
         }
 
+        // 顺序出的 notify 只会唤醒一个线程，notifyAll 唤醒所有线程。
         Thread.sleep(3000);
         System.out.println("-----------分割线-------------");
 

@@ -19,7 +19,7 @@ public class YieldTest implements Runnable {
      * 不过不能指定暂停的时间，并且也不能保证当前线程马上停止。
      * yield方法只是将Running状态转变为Runnable状态
      */
-    public static void testYield() {
+    public static void main(String[] args) {
         YieldTest run = new YieldTest();
         Thread t1 = new Thread(run, "FirstThread");
         Thread t2 = new Thread(run, "SecondThread");

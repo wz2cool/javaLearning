@@ -6,7 +6,7 @@ public class SleepTest {
      * 这里就可以看出，所有sleep 都是顺序执行的，因为sleep并没有释放锁
      * 而wait 就会释放锁，所以可以看到 打出了 start--
      */
-    public static void testSleep() {
+    public static void main(String[] args) {
         final SleepTest test1 = new SleepTest();
 
         for (int i = 0; i < 3; i++) {

@@ -33,7 +33,7 @@ public class VolatileTest extends Thread {
         System.out.println("isUpdated的值被修改为为false,线程将被停止了");
     }
 
-    public static void testVolatile() throws Exception {
+    public static void main(String[] args) throws Exception {
         VolatileTest volatileTest = new VolatileTest();
         volatileTest.start();
         Thread.sleep(1000);

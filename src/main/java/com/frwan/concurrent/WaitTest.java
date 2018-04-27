@@ -2,7 +2,7 @@ package com.frwan.concurrent;
 
 public class WaitTest {
 
-    public static void testWait() {
+    public static void main(String[] args) {
         final WaitTest test = new WaitTest();
         new Thread(new Runnable() {
             public void run() {

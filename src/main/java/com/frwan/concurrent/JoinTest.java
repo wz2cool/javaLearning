@@ -6,9 +6,9 @@ import java.util.List;
 
 public class JoinTest {
     /**
-     *  这里我们可以通过并发，最终在join 以后父线程等待所有子线程完成，有点像C# Task.waitAll
+     * 这里我们可以通过并发，最终在join 以后父线程等待所有子线程完成，有点像C# Task.waitAll
      */
-    public static void testJoin() {
+    public static void main(String[] args) {
         final JoinTest joinTest = new JoinTest();
 
         List<Thread> jobThread = new ArrayList<Thread>();
