@@ -5,5 +5,9 @@ public class SingletonTest {
         LazySingleton lazySingleton = LazySingleton.getSingleton();
         StaticFinalSingleton staticFinalSingleton = StaticFinalSingleton.getInstance();
         StaticNestedSingleton staticNestedSingleton = StaticNestedSingleton.getInstance();
+
+
+        // java 源码使用 singleton
+        java.lang.Runtime.getRuntime();
     }
 }

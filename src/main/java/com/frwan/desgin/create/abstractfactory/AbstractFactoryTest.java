@@ -13,5 +13,10 @@ public class AbstractFactoryTest {
         User accessUser = accessFactory.createUser();
         System.out.println(accessDepartment.getDepartment());
         System.out.println(accessUser.getUser());
+
+
+        // java 源码使用
+        java.util.Arrays.asList();
+        javax.xml.transform.TransformerFactory.newInstance();
     }
 }
