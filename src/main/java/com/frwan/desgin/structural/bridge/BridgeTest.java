@@ -1,5 +1,6 @@
 package com.frwan.desgin.structural.bridge;
 
+// https://blog.csdn.net/angjunqiang/article/details/42061453
 public class BridgeTest {
     public static void main(String[] args) {
         BigBrush bigBrush = new BigBrush();
