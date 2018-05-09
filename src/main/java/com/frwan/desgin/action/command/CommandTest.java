@@ -12,6 +12,7 @@ public class CommandTest {
         user.undo(4);
         user.redo(3);
 
+        // java.lang.Runnable
         System.out.println("========== command end =========");
     }
 }
