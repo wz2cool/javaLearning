@@ -1,7 +1,5 @@
 package com.frwan.desgin.action.mediator;
 
-import com.sun.org.apache.xpath.internal.functions.FuncSubstring;
-
 public class Participant {
     private String name;
     private AbstractChartroom chartroom;
