@@ -16,5 +16,8 @@ public class MementoTest {
         salesProspect.setBudget(1000000.0);
         // Restore saved state
         salesProspect.restoreMemento(m.getMemento());
+
+        // java 源码
+        // java.util.Date
     }
 }
