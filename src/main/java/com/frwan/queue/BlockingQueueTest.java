@@ -29,6 +29,7 @@ public class BlockingQueueTest {
                     Thread.sleep(2000);
                     System.out.println("开始取值");
                     List<Integer> list = new LinkedList<>();
+                    // ，并且当生产出来的数据累积到一定程度的时候，那么生产者必须暂停等待一下（阻塞生产者线程），以便等待消费者线程把累积的数据处理完毕，反之亦然。然而
                     blockingQueue.drainTo(list);  //drainTo()将队列中的值全部从队列中移除，并赋值给对应集合
                     list.forEach(System.out::println);
                 } catch (InterruptedException ex) {
