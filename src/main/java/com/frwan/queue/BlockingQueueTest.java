@@ -10,16 +10,18 @@ public class BlockingQueueTest {
     private static BlockingQueue<Integer> blockingQueue = new LinkedBlockingDeque<>(10);
 
     public static void main(String[] args) {
-        ScheduledExecutorService product = Executors.newScheduledThreadPool(1);
+        ScheduledExecutorService product = Executors.newScheduledThreadPool(2);
         Random random = new Random();
         product.scheduleAtFixedRate(() -> {
             int value = random.nextInt(101);
             try {
-                blockingQueue.offer(value);
+                boolean result = blockingQueue.offer(value);
+                // 容量满了就加不进去了
+                System.out.println("add result: " + result);
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
-        }, 0, 200, TimeUnit.MILLISECONDS);
+        }, 0, 100, TimeUnit.MILLISECONDS);
 
         new Thread(() -> {
             while (true) {
